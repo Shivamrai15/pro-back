@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/auth.css">
+</head>
+<body>
+    <header class="navbar">
+        <nav>
+            <ul class="md-list" >
+                <div>
+                    <li>
+                        <a href="./index.html">
+                            Home
+                        </a>
+                    </li>
+                </div>
+                <li>
+                    <a href="./login.html">
+                        <button class="auth-btn">
+                            Login
+                        </button>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form class="form" id="register-form" >
+            <p>
+                Welcome,<span>sign up to continue</span>
+            </p>
+            <input type="email" placeholder="Email" name="email">
+            <input type="password" placeholder="Password" name="password">
+            <button class="oauthButton">
+                Continue
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 17 5-5-5-5"></path><path d="m13 17 5-5-5-5"></path></svg>
+            </button>
+            <div class="separator">
+                <div></div>
+                <span>OR</span>
+                <div></div>
+            </div>
+            <a href="./login.html">
+                Already have an account
+            </a>
+        </form>
+    </main>
+    <script src="./js/register.js"></script>
+</body>
+</html>

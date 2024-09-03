@@ -1,0 +1,82 @@
+main {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.center {
+    text-align: center;
+}
+
+.sm-heading {
+    color: rgb(79, 79, 79);
+    font-size: 12px;
+}
+
+.md-heading {
+    color: rgb(64, 64, 64);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.lg-heading {
+    color: rgb(54, 54, 54);
+    font-size: 44px;
+    font-weight: 900;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+}
+
+.hero img {
+    aspect-ratio: 1/1;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.hero div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+@media (min-width: 600px) { 
+    .hero {
+        grid-template-columns: 1fr 1fr;
+        padding-left: 4rem;
+        padding-right: 4rem;
+        gap: 4rem;
+    }
+}
+
+.p-4 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+
+.card {
+    background: #ededed;
+    padding: 10px;
+}
+
+.card img {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card div {
+    padding: 1rem;
+    display:  flex;
+    flex-direction: column;
+    gap: 6px;
+}
