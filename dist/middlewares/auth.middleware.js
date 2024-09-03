@@ -34,7 +34,11 @@ const verifyJWT = (req, res, next) => __awaiter(void 0, void 0, void 0, function
     }
     catch (error) {
         console.log("Error", error);
-        return res.send("Unauthorized").status(500);
+        return res.json({
+            success: false,
+            // @ts-ignore
+            message: error === null || error === void 0 ? void 0 : error.message
+        }).status(500);
     }
 });
 exports.verifyJWT = verifyJWT;

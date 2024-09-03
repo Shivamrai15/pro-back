@@ -45,7 +45,11 @@ authRouter.post("/register", async(req, res)=>{
         );
 
     } catch (error) {
-        return res.send("Internal server error").status(500);
+        return res.json({
+            success : false,
+            // @ts-ignore
+            message : error?.message
+        }).status(500);
     }
 });
 
@@ -103,7 +107,11 @@ authRouter.post("/login", async(req, res)=>{
         )
         
     } catch (error) {
-        return res.send("Internal server error").status(500);
+        return res.json({
+            success : false,
+            // @ts-ignore
+            message : error?.message
+        }).status(500);
     }
 });
 
@@ -137,7 +145,11 @@ authRouter.get("/logout", verifyJWT, async(req, res)=>{
                 .json(new ApiResponse(200, {}, "User logged out successfullly"));
 
     } catch (error) {
-        return res.send("Internal server error").status(500);
+        return res.json({
+            success : false,
+            // @ts-ignore
+            message : error?.message
+        }).status(500);
     }
 });
 
@@ -151,6 +163,10 @@ authRouter.get("/me", verifyJWT, async(req, res)=>{
                 .json(new ApiResponse(200, user, "User Data"));
 
     } catch (error) {
-        
+        return res.json({
+            success : false,
+            // @ts-ignore
+            message : error?.message
+        }).status(500);
     }
 })

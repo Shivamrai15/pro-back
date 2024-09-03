@@ -46,7 +46,11 @@ exports.authRouter.post("/register", (req, res) => __awaiter(void 0, void 0, voi
         return res.status(201).json(new api_response_1.ApiResponse(200, constrainedUser, "User has been created successfully"));
     }
     catch (error) {
-        return res.send("Internal server error").status(500);
+        return res.json({
+            success: false,
+            // @ts-ignore
+            message: error === null || error === void 0 ? void 0 : error.message
+        }).status(500);
     }
 }));
 exports.authRouter.post("/login", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -89,7 +93,11 @@ exports.authRouter.post("/login", (req, res) => __awaiter(void 0, void 0, void 0
             .json(new api_response_1.ApiResponse(200, loggedInUser, "User has been loggedIn successfully"));
     }
     catch (error) {
-        return res.send("Internal server error").status(500);
+        return res.json({
+            success: false,
+            // @ts-ignore
+            message: error === null || error === void 0 ? void 0 : error.message
+        }).status(500);
     }
 }));
 exports.authRouter.get("/logout", auth_middleware_1.verifyJWT, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -115,7 +123,11 @@ exports.authRouter.get("/logout", auth_middleware_1.verifyJWT, (req, res) => __a
             .json(new api_response_1.ApiResponse(200, {}, "User logged out successfullly"));
     }
     catch (error) {
-        return res.send("Internal server error").status(500);
+        return res.json({
+            success: false,
+            // @ts-ignore
+            message: error === null || error === void 0 ? void 0 : error.message
+        }).status(500);
     }
 }));
 exports.authRouter.get("/me", auth_middleware_1.verifyJWT, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -127,5 +139,10 @@ exports.authRouter.get("/me", auth_middleware_1.verifyJWT, (req, res) => __await
             .json(new api_response_1.ApiResponse(200, user, "User Data"));
     }
     catch (error) {
+        return res.json({
+            success: false,
+            // @ts-ignore
+            message: error === null || error === void 0 ? void 0 : error.message
+        }).status(500);
     }
 }));

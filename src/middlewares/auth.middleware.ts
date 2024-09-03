@@ -24,6 +24,10 @@ export const verifyJWT = async(req:any, res: any, next:any)=>{
 
     } catch (error) {
         console.log("Error", error);
-        return res.send("Unauthorized").status(500);
+        return res.json({
+            success : false,
+            // @ts-ignore
+            message : error?.message
+        }).status(500);
     }
 }
